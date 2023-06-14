@@ -10,4 +10,4 @@ $send();
 $send("Hello World !");
 ````
 
-![Retorno:](https://imgur.com/5vxq3bL)
+![Retorno:](https://i.imgur.com/5vxq3bL.png)
