@@ -3,5 +3,10 @@ Documentação da linguagem basica de criação de bots na plataforma whatsapp (
 
 # Enviar uma mensagem
 ```
-$send();
+$send("");
 ```
+
+#Exemplo de uso
+````
+$send("Hello World !");
+````
