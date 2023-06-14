@@ -9,3 +9,5 @@ $send();
 ````js
 $send("Hello World !");
 ````
+
+![Retorno:](https://imgur.com/5vxq3bL)
