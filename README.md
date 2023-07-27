@@ -14,5 +14,5 @@ $reply("I replied to your message!");
 ````
 
 # Retorno:
-![Exemplo de retorno](https://i.imgur.com/5vxq3bL.png)
-![Outro exemplo de retorno](https://i.imgur.com/HjW1pWC.png)
+![](https://i.imgur.com/5vxq3bL.png)
+![](https://i.imgur.com/HjW1pWC.png)
