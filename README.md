@@ -13,8 +13,10 @@ $send("Hello World !");
 $reply("I replied to your message!");
 ```
 
-# Retorno:
+# Send:
 ![](https://i.imgur.com/5vxq3bL.png)
+
+# Reply:
 ![](https://i.imgur.com/HjW1pWC.png)
 
 # Envio de reações:
