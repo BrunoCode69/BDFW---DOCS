@@ -12,7 +12,7 @@ $reply(); // Responde a quem executou o comando.
 $send("Hello World !");
 $reply("I replied to your message!");
 ````
-# Retorno:
 
-![](https://i.imgur.com/5vxq3bL.png)
-![](https://i.imgur.com/HjW1pWC.png)
+# Retorno:
+![$send("Hello World !")](https://i.imgur.com/5vxq3bL.png)
+![$reply("I replied to your message!")](https://i.imgur.com/HjW1pWC.png)
