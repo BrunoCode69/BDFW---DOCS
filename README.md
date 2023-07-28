@@ -2,16 +2,27 @@
 Documentação da linguagem basica de criação de bots na plataforma whatsapp (bdfw).
 
 # Variaveis padrões do sistema:
+* USUARIO:
 ```js
-// USUARIO:
 $username // Equivale ao nome do individuo que usou o comando.
 $user_contact // Equivale ao numero do individuo que usou o comando.
 $user_profile_description // Equivale a descrição do individuo que usou o comando.
 $user_profile_message // Equivale ao recado do individuo que usou o comando.
 $user_profile_status // Equive ao status do do individuo que usou o comando ["online", ["offline"]].
-$user_profile_avatar // Equivale ao buffer da foto de perfil do individuo que usou o comando.
+$user_profile_avatar // Equivale ao buffer da imagem de perfil do individuo que usou o comando.
 $user_profile_avatar_url // Equivale a uma URL PNG do perfil do individuo que usou o comando.
 ```
+* GRUPOS:
+```js
+$group_name // Equivale ao nome do grupo atual.
+$group_description // Equivale a descrição do grupo atual.
+$group_owner_contact // Equivale ao numero do dono do grupo atual.
+$group_owner_name // Equivale ao nome do dono do grupo atual.
+$group_owner_status // Equivale ao status do dono do grupo atual.
+$group_owner_profile_description // Equivale a descrição do dono do grupo atual.
+$group_owner_profile_avatar // Equivale ao buffer do da imagem de perfil do dono do grupo atual.
+```
+
 * BOT (APLICAÇÃO):
 ```js
 $bot_name // Equivale ao nome do bot.
@@ -61,8 +72,8 @@ $react($msg, "👍"); // Reaje a mensagem equivalente a variavel "msg".
 // Removendo a reação da mensagem enviada:
 $remove_reaction($msg, "👍");
 ```
-# Envio de arquivos:
-* Obtendo o buffer da imagem pelo URL:
+# Envio de arquivos (Função premium):
+* Obtendo o buffer do arquivo pelo URL:
 
 ```js
 $get_file_buffer("img", "https://imagem.png");
@@ -73,6 +84,11 @@ $get_file_buffer("img", "https://imagem.png");
 $send_file($img, "Aqui está sua imagem !");
 // ou
 $reply_file($img, "Aqui está sua imagem !");
+```
+
+# Gerenciamento de grupos:
+```js
+
 ```
 
 # Condições:
@@ -98,7 +114,7 @@ $find_json("", "") // Busca a key na variavel definida no $def_json.
 
 * Exemplo de uso:
 ```js
-$def_json("my_json", "{"message": "Hello World"}") // Define a variavel e o JSON que deseja ativar as funções.
+$def_json("my_json", "{"message": "Hello World"}"); // Define a variavel e o JSON que deseja ativar as funções.
 $send("O conteudo da key message é: $find_json("message")");
 ```
 
