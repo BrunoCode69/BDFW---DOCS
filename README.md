@@ -120,7 +120,7 @@ $send("O conteudo da key message é: $find_json("message")");
 
 # Requisições HTTP (Função premium):
 ```js
-new $request("meu_request"); // Cria uma instancia chamada "meu_request".
+$request("meu_request"); // Cria uma instancia chamada "meu_request".
 $meu_request.setUrl("https://api.com.br"); // Define o URL do servidor que receberá o request
 $meu_request.setMethod("POST"); // Define o tipo de request ["POST", "GET", "DELETE", "OPTIONS"] etc..
 $meu_request.setType("JSON"); // Define o tipo de conteudo a ser recebido. ["JSON", "UTF-8"].
@@ -130,7 +130,7 @@ $meu_request.send(); // Envia a requisição.
 
 * Exemplo de uso:
 ```js
-new $request("meu_request");
+$request("meu_request");
 $meu_request.setUrl("https://api.com.br");
 $meu_request.setMethod("POST");
 $meu_request.setType("JSON");
