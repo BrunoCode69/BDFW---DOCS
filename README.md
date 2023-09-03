@@ -21,6 +21,8 @@ $group_owner_name // Equivale ao nome do dono do grupo atual.
 $group_owner_status // Equivale ao status do dono do grupo atual.
 $group_owner_profile_description // Equivale a descrição do dono do grupo atual.
 $group_owner_profile_avatar // Equivale ao buffer do da imagem de perfil do dono do grupo atual.
+$group_ownew_profile_avatar_url // Equivale ao avatar do dono do grupo.
+$chat_id // Equivale ao ID do chat, seja grupo ou pv, canal etc.
 ```
 
 * BOT (APLICAÇÃO):
@@ -63,15 +65,17 @@ $remove_reaction(""); // Remove a reação da mensagem.
 $react("✅"); // Reaje a mensagem recebida pelo BOT.
 $remove_reaction("✅"); // Remove a reação da mensagem recebida.
 ```
-
-* Definindo a mensagem em variaveis:
+# Coletor de cliques em reação:
 ```js
-$send("msg", "Hello World"); // Envia e ativa a variavel "msg" associada a mensagem enviada.
-$react($msg, "👍"); // Reaje a mensagem equivalente a variavel "msg".
+$send("msg", "Clique no 👍") // Envia e cria o parametro "msg" como variavel equivalente a mensagem enviada.
 
-// Removendo a reação da mensagem enviada:
-$remove_reaction($msg, "👍");
-```
+$react($msg, "👍")
+
+$msg.add_reaction_collector {
+    $reply("Você reajiu a mensagem !")
+}
+ ```
+
 # Envio de arquivos (Função premium):
 * Obtendo o buffer do arquivo pelo URL:
 
@@ -88,7 +92,14 @@ $reply_file($img, "Aqui está sua imagem !");
 
 # Gerenciamento de grupos:
 ```js
-
+$create_group("name") // Cria um grupo.
+$leave("id"); // Sai do grupo.
+$join("url") // Entra em grupos pelo URL de convite.
+$ban("id") // Remove um membro do grupo.
+$set_admin("id") // Adiciona um membro como adminstrador.
+$remove_admin("id") // Remove o administrador do membro.
+$set_group_image_profile("id", "URL"); // Define a imagem do grupo.
+$set_group_description("id", "text") // Define a descrição do grupo.
 ```
 
 # Condições:
@@ -106,6 +117,20 @@ $if(10 + 10 == 20) {
 };
 ```
 
+# Banco de dados:
+```js
+$databaseGET("", "");
+$databaseSET("", "");
+$databaseDELETE("", "");
+```
+
+* Exemplo de uso:
+```js
+$databaseGET("db", "saldo.$contact");
+
+$send("Olá, $contact, seu saldo no banco de dados é $db");
+```
+
 # Manipulação de strings JSON:
 ```js
 $def_json("", ""); // Requer 2 parametros, a variavel e o conteudo em string JSON.
@@ -115,7 +140,7 @@ $find_json("", "") // Busca a key na variavel definida no $def_json.
 * Exemplo de uso:
 ```js
 $def_json("my_json", "{"message": "Hello World"}"); // Define a variavel e o JSON que deseja ativar as funções.
-$send("O conteudo da key message é: $find_json("message")");
+$send("O conteudo da key message é: $find_json("{"message": "Hello world"}")");
 ```
 
 # Requisições HTTP (Função premium):
